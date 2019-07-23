@@ -1,0 +1,9 @@
+<!--pages/index/index.wxml-->
+<view class="warrp">
+  <image src="/pages/images/index/cart.jpg"></image>
+  <text class="warrpText">Hello World</text>
+  <view class="inner" catchtap="gotoList">
+  <!-- bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。 -->
+    <text>开启微信小程序</text>
+  </view>
+</view>

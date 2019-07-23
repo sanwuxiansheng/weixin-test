@@ -1,0 +1,14 @@
+{
+  "window": {
+    "navigationBarBackgroundColor": "#8ed145",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小程序",
+    "backgroundColor": "#556B2F",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/list/list"
+  ]
+}

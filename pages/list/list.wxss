@@ -1,0 +1,5 @@
+/* pages/list/list.wxss */
+.swiperImg image{
+  width: 100%;
+  height: 100%;
+}

@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/movies/movies.js
 Page({
 
   /**
@@ -12,17 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-  },
-  gotoList() {
-    // wx.navigateTo(Object object) 跳到指定界面后可以返回到之前的界面
-    // wx.navigateTo({
-    //   url: '/pages/list/list',
-    // })
-    // wx.redirectTo()  跳到指定界面后不能返回到之前的界面
-    wx.switchTab({
-      url: '/pages/list/list',
-    })
+
   },
 
   /**

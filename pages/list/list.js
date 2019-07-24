@@ -21,7 +21,7 @@ Page({
     })
   },
   gotoDetail(event) {
-    console.log(event)
+    // console.log(event)
     const index = event.currentTarget.dataset.index;
     // console.log(index)
     wx.navigateTo({

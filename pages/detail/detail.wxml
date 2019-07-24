@@ -10,7 +10,7 @@
   <text class="detail_company">{{detailObj.title}}</text>
   <view class="detail_collection_share">
     <view class="col_share_img">
-      <image src="/images/icon/collection-anti.png" catchtap="handleCollection"></image>
+      <image src="{{isCollected ? '/images/icon/collection.png' : '/images/icon/collection-anti.png'}}" catchtap="handleCollection"></image>
       <image src="/images/icon/share.png" catchtap="handleShare"></image>
     </view>
     <view class="line"></view>

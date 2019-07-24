@@ -7,7 +7,8 @@ Page({
    */
   data: {
     //保存数据
-    detailObj: {}
+    detailObj: {},
+    isCollected:false
   },
 
   /**
@@ -20,8 +21,37 @@ Page({
     const detailObj = listData.list_data[index];
     // console.log(detailObj);
     this.setData({
-      detailObj
+      detailObj,
+      index
     })
+    // 页面显示后先读取下缓存
+    let storage = wx.getStorageSync('isCollected')
+    if (storage[index]) {
+      this.setData({
+        isCollected: true
+      })
+    }
+  },
+  handleCollection(){
+    let isCollected = !this.data.isCollected;
+    this.setData({
+      isCollected
+    })
+    // 提示用户的信息提示框
+    let title = isCollected ? '收藏成功' : '取消收藏';
+    wx.showToast({
+      title
+    })
+    // 缓存操作
+    let obj = wx.getStorageSync('isCollected');
+    obj = obj ? obj : {};
+    let index = this.data.index;
+    obj[index] = isCollected
+    wx.setStorage({
+      key: 'isCollected',
+      data: obj,
+    })
+    console.log(obj)
   },
 
   /**

@@ -8,7 +8,8 @@ Page({
   data: {
     //保存数据
     detailObj: {},
-    isCollected:false
+    isCollected:false,
+    isPlayMusic:false
   },
 
   /**
@@ -31,7 +32,35 @@ Page({
         isCollected: true
       })
     }
+    // 获取全局的app实例对象
+    const app = getApp();
+    // console.log(app)
+    if (app.data.palayIndex === index) {
+      // 把当前详情页的播放状态数据更新下
+      this.setData({
+        isPlayMusic: app.data.isPlay
+      })
+    }
+    // 播放监听
+    wx.onBackgroundAudioPlay(() => {
+      // 立刻更新数据
+      this.setData({
+        isPlayMusic: true
+      })
+      app.data.isPlay = this.data.isPlayMusic;
+      app.data.palayIndex = index
+    })
+    // 暂停监听
+    wx.onBackgroundAudioPause(() => {
+      // 立刻更新数据
+      this.setData({
+        isPlayMusic: false
+      })
+      app.data.isPlay = this.data.isPlayMusic;
+    })
   },
+  
+  // 收藏按钮
   handleCollection(){
     let isCollected = !this.data.isCollected;
     this.setData({
@@ -52,6 +81,31 @@ Page({
       data: obj,
     })
     console.log(obj)
+  },
+  // 分享按钮
+  handleShare () {
+    wx.showActionSheet({
+      itemList: ['分享给好友', '分享到朋友圈', '发送给朋友']
+    })
+  },
+  // 播放音乐
+  playMusic () {
+    let isPlayMusic = !this.data.isPlayMusic
+    this.setData({
+      isPlayMusic
+    })
+    const { coverImgUrl, dataUrl, title } = this.data.detailObj.music
+    if (isPlayMusic) {
+      // 播放音乐
+      wx.playBackgroundAudio({
+        dataUrl,
+        coverImgUrl,
+        title
+      })
+    } else {
+      // 暂停播放音乐
+      wx.pauseBackgroundAudio()
+    }
   },
 
   /**

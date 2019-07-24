@@ -1,5 +1,9 @@
 App({
-
+  // 缓存---详情页中，读取播放的状态的值---true或者false
+  data:{
+    isPlay:false,
+    playIndex:null
+  },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */

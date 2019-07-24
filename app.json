@@ -12,5 +12,8 @@
     "pages/index/index",
     "pages/detail/detail"
   ],
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio"
+  ]
 }

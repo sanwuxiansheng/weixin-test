@@ -8,7 +8,9 @@
     "enablePullDownRefresh": true
   },
   "pages": [
+    "pages/list/list",
     "pages/index/index",
-    "pages/list/list"
-  ]
+    "pages/detail/detail"
+  ],
+  "sitemapLocation": "sitemap.json"
 }

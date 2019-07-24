@@ -1,4 +1,9 @@
 /* pages/list/list.wxss */
+@import '/pages/listTop/listTop.wxss';
+.swiperImg{
+  width:100%;
+  height: 400rpx;
+}
 .swiperImg image{
   width: 100%;
   height: 100%;

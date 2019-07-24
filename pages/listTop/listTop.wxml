@@ -1,0 +1,22 @@
+<!--pages/listTop/listTop.wxml-->
+<template name="listTop">
+  <view class="outer">
+    <view class="heard_center">
+      <image src="{{avatar}}"></image>
+      <text>{{date}}</text>
+    </view>
+    <view class="nav_center">
+      <text>{{title}}</text>
+      <image src="{{detail_img}}"></image>
+    </view>
+
+    <text class="center">{{detail_content}}</text>
+
+    <view class="footer_center">
+      <image src="{{detail_love_image1}}"></image>
+      <text>{{love_count}}</text>
+      <image src="{{detail_love_image2}}"></image>
+      <text>{{attention_count}}</text>
+    </view>
+  </view>
+</template>

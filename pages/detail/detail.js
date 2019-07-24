@@ -1,4 +1,4 @@
-// pages/list/list.js
+// pages/detail/detail.js
 let listData = require('../../datas/list-data.js')
 Page({
 
@@ -6,26 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listData:[] // 用来保存data文件中数据的数组
+    //保存数据
+    detailObj: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(listData)
-    // console.log(listData.list_data)
-    let list = listData.list_data
+    // console.log(options)
+    const index = options.index;
+    // 根据索引找数组中的某个对象
+    const detailObj = listData.list_data[index];
+    // console.log(detailObj);
     this.setData({
-      listData:list
-    })
-  },
-  gotoDetail(event) {
-    console.log(event)
-    const index = event.currentTarget.dataset.index;
-    // console.log(index)
-    wx.navigateTo({
-      url: ('/pages/detail/detail?index=' + index),
+      detailObj
     })
   },
 

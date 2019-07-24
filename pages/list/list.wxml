@@ -2,19 +2,25 @@
 <!-- <view>
   <text>list界面</text>
 </view> -->
+<import src="/pages/listTop/listTop.wxml" />
 <view>
   <swiper indicator-dots="true" indicator-color="#333" indicator-active-color="#8ed145" autoplay interval="3000" circular="true" class="swiperImg">
     <swiper-item>
-      <image src="/pages/images/detail/carousel/01.jpg"></image>
+      <image src="/images/detail/carousel/01.jpg"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/pages/images/detail/carousel/02.jpg"></image>
+      <image src="/images/detail/carousel/02.jpg"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/pages/images/detail/carousel/03.jpg"></image>
+      <image src="/images/detail/carousel/03.jpg"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/pages/images/detail/carousel/04.jpg"></image>
+      <image src="/images/detail/carousel/04.jpg"></image>
     </swiper-item>
   </swiper>
+  <block wx:for="{{listData}}" wx:key="{{index}}">
+    <view catchtap="gotoDetail" data-index="{{index}}">
+      <template is="listTop" data="{{...item}}"/>
+    </view>
+  </block>
 </view>

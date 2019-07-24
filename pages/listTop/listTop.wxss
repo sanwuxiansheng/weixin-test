@@ -1,0 +1,54 @@
+/* pages/listTop/listTop.wxss */
+/*头部头像和文本*/ 
+.outer{
+  display: flex;
+  flex-direction: column;
+}
+.heard_center{
+  display: flex;
+}
+.heard_center image {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 10rpx;
+  justify-content: center;
+}
+.heard_center text {
+  justify-content: center;
+  font-size: 30rpx;
+  margin: 10rpx;
+  line-height: 60rpx;
+  color: #777;
+}
+/*标题和大图*/
+.nav_center{
+  width: 100%;
+}
+.nav_center text {
+  margin: 10rpx;
+  font-size: 60rpx;
+  font-weight: 800;
+}
+.nav_center image {
+  width: 100%;
+  height: 400rpx;
+}
+/* 内容 */
+.outer .center{
+  font-size: 36rpx;
+  color: #777;
+  text-indent: 80rpx;
+}
+/* 底部图片和文本*/
+.footer_center{
+  margin-left: 10rpx;
+}
+.footer_center image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.footer_center text{
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}

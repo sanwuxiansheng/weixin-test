@@ -5,14 +5,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{} // 存储用户信息
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.getUserInfo({
+      success: (res) => {
+        // console.log('成功' + res)
+        // console.log(res)
+        if (res.rawData) {
+          this.setData({
+            userInfo:JSON.parse(res.rawData)
+          })
+        }
+        // console.log(this.data.userInfo)
+      },
+      fail: (res) => {
+        console.log('失败' + res)
+        // console.log(res)
+      }
+    })
+  },
+  // 获取用户信息的回调函数
+  loginUser (res) {
+    // console.log(res)
+    if (res.detail) {
+      this.setData({
+        userInfo:JSON.parse(res.detail.rawData)
+      })
+    }
+    // console.log(this.data.userInfo)
   },
   gotoList() {
     // wx.navigateTo(Object object) 跳到指定界面后可以返回到之前的界面
